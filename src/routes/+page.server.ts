@@ -6,7 +6,7 @@ export async function load() {
 	let channels = [];
 	channels = await get_channels();
 	type status = { [key: string]: boolean };
-	let channel_status: status = {};
+	const channel_status: status = {};
 	for (const channel of channels) {
 		channel_status[channel] = await is_channel_live(channel);
 	}

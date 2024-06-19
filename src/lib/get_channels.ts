@@ -1,11 +1,9 @@
-function get_channels(): Promise<string[]> {
-	return new Promise(async (resolve, reject) => {
-		const response = await fetch('https://live-prayer-static.pages.dev/channels.json');
+async function get_channels(): Promise<string[]> {
+	return await fetch('https://live-prayer-static.pages.dev/channels.json').then((response) => {
 		if (response.status !== 200) {
-			reject(`Failed to fetch channel list with status ${response.status}.`);
+			throw new Error(`Failed to fetch channel list with status ${response.status}.`);
 		}
-		const channels = await response.json();
-		resolve(channels);
+		return response.json();
 	});
 }
 
