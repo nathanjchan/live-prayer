@@ -17,13 +17,13 @@
 <h2>Live Channels</h2>
 <ul>
 	{#each live_channels as channel}
-		<li>{channel}</li>
+		<li><a href="https://www.youtube.com/@{channel}">{channel}</a></li>
 	{/each}
 </ul>
 
 <h2>Non-Live Channels</h2>
 <ul>
 	{#each non_live_channels as channel}
-		<li>{channel}</li>
+		<li><a href="https://www.youtube.com/@{channel}">{channel}</a></li>
 	{/each}
 </ul>
