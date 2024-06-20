@@ -8,7 +8,7 @@ test('home page has expected h1', async ({ page }) => {
 test('home page has expected h2', async ({ page }) => {
 	await page.goto('/');
 	await expect(page.locator('h2')).toHaveCount(2);
-})
+});
 
 test('home page has expected links', async ({ page }) => {
 	await page.goto('/');
